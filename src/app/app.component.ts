@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,24 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  name = 'Pikachu';
-  life = 21;
+  name = signal('Pikachu');
+  life = signal(21);
+  size = computed(() => {
+    if (this.life() <= 15) {
+      return 'Petit';
+    }
+    if (this.life() >= 25) {
+      return 'Grand';
+    }
+
+    return 'Moyen';
+  });
 
   incrementLife() {
-    this.life = this.life + 1;
+    this.life.update((life) => life + 1);
   }
 
   decrementLife() {
-    this.life = this.life - 1;
+    this.life.update((life) => life - 1);
   }
 }
