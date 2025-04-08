@@ -4,6 +4,7 @@ import { Routes, provideRouter } from '@angular/router';
 import { AuthGuard } from './core/auth/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PokemonAddComponent } from './pokemon/pokemon-add/pokemon-add.component';
 import { PokemonEditComponent } from './pokemon/pokemon-edit/pokemon-edit.component';
 import { PokemonListComponent } from './pokemon/pokemon-list/pokemon-list.component';
 import { PokemonProfileComponent } from './pokemon/pokemon-profile/pokemon-profile.component';
@@ -22,6 +23,11 @@ const routes: Routes = [
         path: '',
         component: PokemonListComponent,
         title: 'Pokédex',
+      },
+      {
+        path: 'add',
+        component: PokemonAddComponent,
+        title: 'Pokémon',
       },
       {
         path: 'edit/:id',
