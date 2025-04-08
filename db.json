@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Bulbizarre",
-      "life": 30,
+      "life": 14,
       "damage": 10,
       "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
       "types": [
